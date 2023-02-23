@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 11:02:21 by albromer          #+#    #+#             */
-/*   Updated: 2023/01/23 13:07:45 by albromer         ###   ########.fr       */
+/*   Created: 2022/12/20 10:24:51 by albromer          #+#    #+#             */
+/*   Updated: 2023/01/24 11:21:55 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*aux;
 
-	i = 0;
-	if (s && f)
+	while (*lst)
 	{
-		while (s[i])
-		{
-			f(i, &s[i]);
-			i++;
-		}
+		aux = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = aux;
 	}
 }
-/*A cada caracter de la string s, aplica la funcion f dando como parametros el 
-indice de cada caracter dentro de s y la direccion del propio caracter, que 
-podra modificarse si es necesario*/
+/*Elimina y libera el nodo lst y sus consecutivos, utilizando 'del' y 'free'.
+Al final el puntero a la lista debe ser NULL*/

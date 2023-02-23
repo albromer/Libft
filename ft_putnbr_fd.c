@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 11:15:50 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/13 12:51:04 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:14:29 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,4 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(i + '0', fd);
 }
+/*Envia el numero n al file descriptor dado*/

@@ -1,47 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 13:38:42 by albromer          #+#    #+#             */
-/*   Updated: 2023/01/24 10:23:05 by albromer         ###   ########.fr       */
+/*   Created: 2022/12/20 12:30:54 by albromer          #+#    #+#             */
+/*   Updated: 2023/01/24 11:24:23 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*new;
-	int		i;
-	int		j;
+	t_list	*new;
+	t_list	*temp;
 
-	if (!s1 || !s2)
+	if (!lst)
 		return (NULL);
-	new = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!new)
-		return (NULL);
-	i = 0;
-	while (s1[i])
+	new = 0;
+	while (lst)
 	{
-		new[i] = s1[i];
-		i++;
+		temp = ft_lstnew(f(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, temp);
+		lst = lst->next;
 	}
-	j = 0;
-	while (s2[j])
-	{
-		new[i] = s2[j];
-		i++;
-		j++;
-	}
-	new[i] = '\0';
 	return (new);
 }
-/*Se toman dos cadenas y se crea una nueva que contiene s1 y s2 concatenada.
-Ejemplo:
-	S1: Hola_
-	S2: mundo
-	Cadena nueva: Hola mundo
-*/
+/*Itera la lista lst y aplica la funcion f al contenido de cada nodo. Crea una 
+lista resultante de la aplicación correcta y sucesiva de la funcion f sobre 
+cada nodo*/

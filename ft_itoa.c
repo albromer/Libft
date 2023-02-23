@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 11:04:52 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/20 12:28:29 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:10:57 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,3 +59,4 @@ char	*ft_itoa(int n)
 	}
 	return (s);
 }
+/*Crea una string como el numero n dado. Los negativos tienen que gestinarse*/

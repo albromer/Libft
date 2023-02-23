@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 12:35:43 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/15 13:29:24 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:58:56 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,33 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*s1;
+	char	*new;
 	size_t	i;
-	size_t	caststart;
 
-	caststart = (size_t)start;
-	i = 0;
-	if (ft_strlen(s) == 0)
-		return (ft_strdup(""));
-	if (ft_strlen(s) < caststart)
-		return (ft_strdup(""));
-	if (ft_strlen(s) - start < len)
-		len = ft_strlen(s) - start;
-	s1 = (char *)malloc(sizeof(char) * (len + 1));
-	if (!s1)
+	if (!s)
 		return (NULL);
-	while (i < len)
+	if (start >= ft_strlen(s))
+		new = malloc(1 * sizeof(char));
+	else if ((ft_strlen(s) - start) > len)
+		new = malloc((len + 1) * sizeof(char));
+	else
+		new = malloc((ft_strlen(s) - start + 1) * sizeof(char));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (i < len && (size_t)start < ft_strlen(s))
 	{
-		s1[i] = s[caststart];
+		new[i] = s[start];
 		i++;
-		caststart++;
+		start++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	new[i] = '\0';
+	return (new);
 }
+/*Realiza una subcadena de la cadena original. Desde el punto de inicio start
+y con la longitud dada en len. Ejemplo: 
+	String: Soy de malaga
+	Start: 3
+	Len: 5
+	Substring: _de_m
+*/

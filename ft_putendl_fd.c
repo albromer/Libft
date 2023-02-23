@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 10:49:52 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/13 11:51:10 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:13:51 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	char	i;
-
-	i = '\n';
-	write(fd, s, ft_strlen(s));
-	write(fd, &i, 1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
+/*Envia la string s al file descriptor dado seguido de salto de linea*/

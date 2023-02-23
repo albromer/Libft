@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:10:47 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/13 11:51:32 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:12:46 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,4 @@ void	ft_putstr_fd(char *s, int fd)
 	ft_putstr_fd(fd, s, ft_strlen(s));
 	return(0);
 }*/
+/*Envia la string s al file descriptor especificado*/

@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 11:02:21 by albromer          #+#    #+#             */
-/*   Updated: 2023/01/23 13:07:45 by albromer         ###   ########.fr       */
+/*   Created: 2022/12/19 13:00:56 by albromer          #+#    #+#             */
+/*   Updated: 2023/01/24 11:18:50 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	i;
-
-	i = 0;
-	if (s && f)
+	if (!lst)
+		return (NULL);
+	while (lst)
 	{
-		while (s[i])
-		{
-			f(i, &s[i]);
-			i++;
-		}
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
 	}
+	return (lst);
 }
-/*A cada caracter de la string s, aplica la funcion f dando como parametros el 
-indice de cada caracter dentro de s y la direccion del propio caracter, que 
-podra modificarse si es necesario*/
+/*Devuelve el ultimo nodo de la lista lst*/

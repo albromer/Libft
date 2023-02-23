@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:53:18 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/13 12:40:26 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:48:51 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 		i++;
 	while (i > 0)
 	{
@@ -25,9 +25,9 @@ char	*ft_strrchr(const char *s, int c)
 			return (&((char *)s)[i]);
 		i--;
 	}
-	if ((char)c == s[i])
+	if (s[i] == (char)c)
 		return (&((char *)s)[i]);
-	return (0);
+	return (NULL);
 }
 
 /*int main()
@@ -35,3 +35,5 @@ char	*ft_strrchr(const char *s, int c)
 	printf("%s", ft_strrchr("mi mama me mima", 'm'));
 	return (0);
 }*/
+/*Busca la última aparición del carácter C en el string dado. Si no se 
+encuentra, se devuelve null. C se pasa como int pero se convierte en char.*/

@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:54:25 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/07 11:39:42 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:06:15 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (ilen + xlen);
 }
 /*int main()
-{
+{ 
 	char src[] = "caracoli";
 	char dst[] = "Holi";
 
@@ -45,3 +45,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	printf("%s\n", dst);
 	return(0);
 }*/
+/*Concatena src en dst el tamaño de dstsize y devuelve al ser size_t, el 
+tamaño de la cadena concatenada*/

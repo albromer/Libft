@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:37:37 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/14 12:10:06 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/17 12:47:49 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,5 @@ char	*ft_strdup(const char *s1)
 	copy[i] = '\0';
 	return (copy);
 }
+/*Crea una nueva cadena copiando la s1. La memoria para la nueva cadena se 
+obtiene con malloc y se puede librar con free*/

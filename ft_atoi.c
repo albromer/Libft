@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 12:38:01 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/07 11:00:12 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:06:19 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,4 @@ int	ft_atoi(const char *str)
 	printf("%d", ft_atoi(a));
 	return(0);
 }*/
+/*Convierte en tipo int los primeros caracteres que encuentra en un string*/

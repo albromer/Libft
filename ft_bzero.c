@@ -6,7 +6,7 @@
 /*   By: albromer <albromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 11:58:10 by albromer          #+#    #+#             */
-/*   Updated: 2022/12/16 12:12:19 by albromer         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:33:43 by albromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,4 @@ void	ft_bzero(void *s, size_t n)
 	printf("%s", &s[4]);
 	return(0);
 }*/
+/*Borra los datos de n carácteres y los rellena de ceros.*/
